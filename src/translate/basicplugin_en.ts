@@ -29,7 +29,7 @@
     <message>
         <location filename="../basicpluginpopup.cpp" line="23"/>
         <source>Plugin basico para dde-dock</source>
-        <translation type="unfinished"></translation>
+        <translation>Basic plugin for dde-dock</translation>
     </message>
 </context>
 </TS>
