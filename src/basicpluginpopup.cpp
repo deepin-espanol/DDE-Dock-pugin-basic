@@ -20,7 +20,7 @@ BasicPluginPopup::BasicPluginPopup(QWidget *parent)
 
     /* etiqueta de título */
     lblTitle = new QLabel;
-    lblTitle->setText("Plugin basico para dde-dock");
+    lblTitle->setText(tr("Plugin basico para dde-dock"));
     lblTitle->setStyleSheet("color: white; font-size: 20px; padding-bottom: 10px; ");      // El CSS soportado por Qt es sólo un subconjunto. Tenga en cuenta que la unidad de ajuste de la fuente no puede ser em, rem, etc.
     lblTitle->setAlignment(Qt::AlignCenter);
     layout->addWidget(lblTitle, 0, 0, 1, 2);    // Los cinco parámetros son, en orden: objeto del widget, fila, columna, expansión de la fila y expansión de la columna. Los dos últimos se utilizan para fusionar las células

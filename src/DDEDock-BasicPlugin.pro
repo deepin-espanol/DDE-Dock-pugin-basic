@@ -29,6 +29,10 @@ HEADERS += \
     mainplugin.h \
     basicplugin.h
 
+TRANSLATIONS += \
+    translate/basicplugin_es.ts \
+    translate/basicplugin_en.ts \
+
 unix {
     target.path = /usr/lib
     INSTALLS += target
@@ -39,4 +43,3 @@ RESOURCES += \
 
 DISTFILES += \
     basicDock.json
-
