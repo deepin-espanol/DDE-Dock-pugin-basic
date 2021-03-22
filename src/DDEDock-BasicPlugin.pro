@@ -4,20 +4,18 @@
 #
 #-------------------------------------------------
 
-QT       += widgets
-QT       += core
+QT       += widgets core
 
 # la compilacion fallara, debe mover el archivo libbasicplugin.so a la siguiente ruta /usr/lib/dde-dock/plugins/
 
-CONFIG   += plugin
+CONFIG += c++11 link_pkgconfig plugin
+PKGCONFIG = dde-dock
 
 # Nombre del archivo del plugin, tentra la inicial "lib" seguida del nombre escrito en (TARGET = "")
 TARGET = basicplugin
 TEMPLATE = lib
 
-DEFINES += DDE_BASICDOCK_LIBRARY
-
-DEFINES += QT_DEPRECATED_WARNINGS
+DEFINES += DDE_BASICDOCK_LIBRARY QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     basicpluginpopup.cpp \
