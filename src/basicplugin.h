@@ -1,7 +1,7 @@
 #ifndef DDE_BASICDOCKPLUGIN_H
 #define DDE_BASICDOCKPLUGIN_H
 
-#include "dde-dock/pluginsiteminterface.h"      // El archivo de cabecera de plugins DDE Dock
+#include <dde-dock/pluginsiteminterface.h> //Class header used to define a plugin interface with its item
 
 // Introduce el archivo de cabecera del interfaz de usuario. Generalmente separan la interfaz del Dock del plugin, cada una en una clase.
 #include "mainplugin.h"          // Archivos de encabezamiento del Plugin
