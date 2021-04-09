@@ -217,7 +217,7 @@ void BasicPluginPlugin::helloWorld()
 // -Mostrar otro número al azar en el indicador del plug-in.
 void BasicPluginPlugin::updateBasicDock()
 {
-    m_widgetMainUI->text = QString::number(randomGen->generate());
+    m_widgetMainUI->setText(QString::number(randomGen->generate()));
     m_widgetMainUI->update();
     m_tipsLabel->setText("¡Los números aleatorios se generan usando el QRandomGenerator! \Número actual al azar." + QString::number(randomGen->generate()));
 }

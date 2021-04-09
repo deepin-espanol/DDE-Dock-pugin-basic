@@ -1,5 +1,5 @@
 #include "mainplugin.h"
-//#include "dde-dock/constants.h"
+
 #include <QApplication>
 #include <QPainter>
 
@@ -11,6 +11,21 @@ BasicPlugin::BasicPlugin(QWidget *parent)
       m_settings("deepin", "DDEBasicPlugin")      // Iniciar el almacenamiento de la configuración del plugin
 {
     text = "Por favor espera...";
+    m_font = qApp->font();          // Necesario para conseguir una instancia de QFont
+    m_font.setFamily("Noto Mono");
+}
+
+void BasicPlugin::setText(QString t)
+{
+    text = t;
+
+    //Then resize the widget if needed
+    int minimum = QFontMetrics(m_font).width(text);
+
+    if (this->minimumWidth() != minimum) {
+        //This ensures the widget has it's minimum size to display the text
+        setMinimumWidth(minimum);
+    }
 }
 
 /* Ver la disponibilidad de los plugins */
@@ -61,10 +76,8 @@ void BasicPlugin::paintEvent(QPaintEvent *e)
     painter.setPen(Qt::white);                          // Establecer el color del pincel
 
     // Establecer las fuentes
-    QFont font = qApp->font();          // Necesario para conseguir una instancia de QFont
-    font.setFamily("Noto Mono");
-    painter.setFont(font);
+    painter.setFont(m_font);
 
     // texto
-    painter.drawText(rect().adjusted(2,0,0,0), Qt::AlignLeft | Qt::AlignVCenter, text);
+    painter.drawText(rect().adjusted(0,0,0,0), Qt::AlignLeft | Qt::AlignVCenter, text);
 }

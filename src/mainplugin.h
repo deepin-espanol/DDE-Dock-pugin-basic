@@ -16,12 +16,11 @@ class BasicPlugin : public QWidget
     Q_OBJECT
 
 public:
-    explicit BasicPlugin(QWidget *parent = 0);           // Constructor
+    explicit BasicPlugin(QWidget *parent = nullptr);           // Constructor
 
     bool enabled();                     // Devuelve la disponibilidad del plugin
     void setEnabled(const bool b);      // Establecer la disponibilidad del plugin
-
-    QString text;                       // El texto que aparece en el plugin
+    void setText(QString t);            //Used to set the text to be displayed and calculate the needed size
 
 /* Metodología requestUpdateGeometry
  * Señales utilizadas por Haitian Hawk en el diseño del plugin que pueden ser
@@ -39,6 +38,10 @@ private:
 
     // Ajustes de operación
     QSettings m_settings;
+    //The font that we'll use
+    QFont m_font;
+    // El texto que aparece en el plugin
+    QString text;
 };
 
 #endif // DDE_BASICDOCK_H
