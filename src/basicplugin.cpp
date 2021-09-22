@@ -199,7 +199,7 @@ void BasicPluginPlugin::invokedMenuItem(const QString &itemKey, const QString &m
 void BasicPluginPlugin::about()
 {
     QMessageBox aboutMB(QMessageBox::NoIcon, "Plugin básico para el dock",
-                        "Aquí hay un ejemplo simple de un desarrollo de un plugin de dde-dock! \Autor: Deepin en español");
+                        "aquí hay un ejemplo simple de un desarrollo de un plugin de dde-dock! \n Autor: Deepin en español");
     aboutMB.setIconPixmap(QPixmap(":/icons/Logo-Racoon.png"));
     aboutMB.exec();
 }
@@ -219,6 +219,6 @@ void BasicPluginPlugin::updateBasicDock()
 {
     m_widgetMainUI->setText(QString::number(randomGen->generate()));
     m_widgetMainUI->update();
-    m_tipsLabel->setText("¡Los números aleatorios se generan usando el QRandomGenerator! \Número actual al azar." + QString::number(randomGen->generate()));
+    m_tipsLabel->setText("¡Los números aleatorios se generan usando el QRandomGenerator! \n Número actual al azar." + QString::number(randomGen->generate()));
 }
 
